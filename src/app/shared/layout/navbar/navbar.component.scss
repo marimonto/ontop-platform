@@ -1,0 +1,33 @@
+@import "src/styles/variables/_colors.scss";
+
+.navbar {
+  height: 108px;
+  background-color: $white;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 35px 62px;
+  .logo {
+    height: 37px;
+  }
+  .navbar-nav {
+    width: 100%;
+    justify-content: space-evenly;
+    max-width: 1000px;
+    margin-inline: auto;
+    .nav-link {
+      font-weight: bold;
+      color: $gray-400;
+    }
+  }
+  .avatar-section {
+    width: 150px;
+    border-left: 1px solid $gray-300;
+    display: flex;
+    justify-content: center;
+    .avatar {
+      vertical-align: middle;
+      width: 65px;
+      height: 65;
+      border-radius: 50%;
+    }
+  }
+}
