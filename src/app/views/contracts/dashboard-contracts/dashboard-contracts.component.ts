@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { faUser } from '@fortawesome/free-regular-svg-icons';
-import { IButton } from 'src/app/core/models/button';
-import { IContractor } from 'src/app/core/models/contractor';
-import { ISearchInput } from 'src/app/core/models/form';
-import { ITableData } from 'src/app/core/models/table';
-import { AuthService } from 'src/app/core/services/auth/auth.service';
-import { ContractsService } from 'src/app/core/services/contracts/contracts.service';
+import { IButton } from '../../../core/models/button';
+import { IContractor } from '../../../core/models/contractor';
+import { ISearchInput } from '../../../core/models/form';
+import { ITableData } from '../../../core/models/table';
+import { AuthService } from '../../../core/services/auth/auth.service';
+import { ContractsService } from '../../../core/services/contracts/contracts.service';
 import {
   ADD_BUTTON,
   COLUMN_TABLE_LIST,

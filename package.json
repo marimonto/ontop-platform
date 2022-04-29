@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "ng test --watch --all",
+    "test-coverage": "ng test --collect-coverage",
     "serve": "json-server --watch server/db.json"
   },
   "private": true,
@@ -36,6 +37,8 @@
     "@angular/cli": "~13.3.4",
     "@angular/compiler-cli": "~13.3.0",
     "@briebug/jest-schematic": "^4.0.0",
+    "@testing-library/angular": "^11.0.4",
+    "@testing-library/jest-dom": "^5.16.4",
     "@types/jest": "~27.4.1",
     "@types/node": "^12.11.1",
     "jest": "~27.5.1",

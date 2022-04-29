@@ -37,7 +37,7 @@ export const selectHandler = (request: HttpRequest<any>) => {
     case 'GET':
       const pathname = requestUrl.pathname;
 
-      if (pathname === '/contractors') {
+      if (pathname === '/contracts') {
         return getContractors;
       }
       if (pathname === '/user') {

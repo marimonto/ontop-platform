@@ -10,6 +10,6 @@ export class ContractsService {
   constructor(private http: HttpClient) {}
 
   getContractors(): Observable<IContractor[]> {
-    return this.http.get<IContractor[]>('https://api/contractors').pipe();
+    return this.http.get<IContractor[]>('https://api/contracts').pipe();
   }
 }

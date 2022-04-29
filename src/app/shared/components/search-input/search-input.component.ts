@@ -33,9 +33,11 @@ export class SearchInputComponent {
 
   onTouch: any = () => {};
 
-  set value(val: string) {
-    if (val !== undefined && this.val !== val) {
-      this.val = val?.trim() || val;
+  set value(value: string) {
+    if (value !== undefined && this.val !== value) {
+      this.val = value?.trim() || value;
+      console.log(this.val);
+
       this.onChange(this.val);
       this.onTouch(this.val);
     }

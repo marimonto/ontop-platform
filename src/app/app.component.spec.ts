@@ -1,29 +1,27 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { render, RenderResult } from '@testing-library/angular';
+import { AuthService } from './core/services/auth/auth.service';
+import { of } from 'rxjs';
+import { NavbarComponent } from './shared/layout/navbar/navbar.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
+  let appComponent: RenderResult<AppComponent, AppComponent>;
+
+  const authServiceMock = { getUser: jest.fn().mockReturnValue(of({})) };
+
+  test('should call getUser', async () => {
+    appComponent = await render(AppComponent, {
+      declarations: [NavbarComponent],
+      imports: [FontAwesomeModule],
+      providers: [
+        {
+          provide: AuthService,
+          useValue: authServiceMock,
+        },
       ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
+    });
+    const getUserSpy = jest.spyOn(authServiceMock, 'getUser');
+    expect(getUserSpy).toHaveBeenCalled();
   });
-
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'ontop-app'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('ontop-app');
-  });
-
 });

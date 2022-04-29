@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
-import { IContractor } from '../../models/contractor';
 import { IUser } from '../../models/user';
 
 @Injectable({

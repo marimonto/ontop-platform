@@ -6,6 +6,7 @@
   [style.height]="data.height"
   [style.width]="data.width"
   [style.fontWeight]="data.fontWeight"
+  (click)="onClick()"
 >
   <fa-icon *ngIf="data.icon" [icon]="data.icon"></fa-icon> {{ data.text }}
 </button>

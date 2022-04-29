@@ -1,7 +1,7 @@
 export interface ITableData {
   headers: Iheader[];
   hasActions: boolean;
-  rows: any
+  rows: (string | number)[][];
 }
 
 export interface Iheader {
