@@ -1,0 +1,40 @@
+@import "src/styles/variables/_colors.scss";
+
+.table-container {
+  background: $white;
+  mix-blend-mode: normal;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 100%;
+  padding: 24px;
+  .table-header {
+    display: flex;
+    flex-direction: row;
+    .col-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 90px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  .table-data {
+    .row-data {
+      display: flex;
+      flex-direction: row;
+      background-color: #f9f9f9;
+      margin-top: 24px;
+      .col-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 90px;
+        font-size: 16px;
+      }
+    }
+  }
+}

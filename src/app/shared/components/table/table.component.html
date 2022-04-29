@@ -1,0 +1,16 @@
+<div class="table-container" *ngIf="data">
+  <div class="table-header">
+    <div class="col-header col" *ngFor="let columnHeader of data.headers">
+      {{ columnHeader.title }}
+    </div>
+    <div class="col-header col" *ngIf="data.hasActions">Actions</div>
+  </div>
+  <div class="table-data">
+    <div class="row-data" *ngFor="let rowData of data.rows">
+      <div class="col-data col" *ngFor="let columData of rowData">
+        {{ columData }}
+      </div>
+      <div class="col-data col" *ngIf="data.hasActions">Actions</div>
+    </div>
+  </div>
+</div>
