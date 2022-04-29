@@ -1,12 +1,16 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { IButton } from 'src/app/core/models/button';
 import { IContractor } from 'src/app/core/models/contractor';
-import { Iheader, ITableData } from 'src/app/core/models/table';
+import { ISearchInput } from 'src/app/core/models/form';
+import { ITableData } from 'src/app/core/models/table';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { ContractsService } from 'src/app/core/services/contracts/contracts.service';
 import {
+  ADD_BUTTON,
   COLUMN_TABLE_LIST,
-  CONTRACTOR_LIST,
+  FILTER_BUTTON,
+  SEARCH_INPUT,
 } from './dashboard-contracts.constants';
 
 @Component({
@@ -17,7 +21,9 @@ import {
 export class DashboardContractsComponent implements OnInit {
   public tableData!: ITableData;
   public company!: string;
-
+  public searchInput: ISearchInput = SEARCH_INPUT;
+  public filterButton: IButton = FILTER_BUTTON;
+  public addButton: IButton = ADD_BUTTON;
   constructor(
     private contractsService: ContractsService,
     private authService: AuthService
@@ -39,7 +45,6 @@ export class DashboardContractsComponent implements OnInit {
   }
   getDataUser(): void {
     this.authService.getUser().subscribe((res) => {
-      console.log(res);
       this.company = res.companyName;
     });
   }

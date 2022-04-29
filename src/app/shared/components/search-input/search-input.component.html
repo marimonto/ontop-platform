@@ -1,0 +1,19 @@
+<div class="input-group search-input" [ngClass]="{ active: !!value }">
+  <div class="input-group-icon">
+    <div class="icon-row d-flex align-items-center mr-2 ml-3 h-100">
+      <img src="/assets/icons/magnifying-glass.svg" />
+    </div>
+  </div>
+  <input
+    type="text"
+    class="form-control my-1"
+    placeholder="{{ data.placeholder }}"
+    [(ngModel)]="value"
+    maxlength="{{ data.maxLength || '50' }}"
+  />
+  <div class="input-group-reset">
+    <div class="icon-row d-flex align-items-center mr-2 ml-2" *ngIf="!!value">
+      <fa-icon [icon]="closeIcon" (click)="clear()"></fa-icon>
+    </div>
+  </div>
+</div>

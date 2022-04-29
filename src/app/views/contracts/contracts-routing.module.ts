@@ -8,6 +8,10 @@ const routes: Routes = [
     path: ROUTES.APP.ROUTES.CONTRACTS.ROUTES.DASHBOARD.PATH,
     component: DashboardContractsComponent,
   },
+  {
+    path: '**',
+    redirectTo: ROUTES.APP.ROUTES.CONTRACTS.ROUTES.DASHBOARD.PATH,
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,43 @@
+@import "src/styles/variables/_colors.scss";
+
+.search-input {
+  border-radius: 6px;
+  border: solid 1px #c7cfd8;
+  background-color: $white;
+  padding-right: 10px;
+  height: 58px;
+  .input-group-icon {
+    margin-left: 24px;
+    min-width: 35px;
+    .icon-row {
+      height: 100%;
+    }
+  }
+  ::placeholder {
+    color: $gray-300;
+  }
+
+  input {
+    border: 0px;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  .input-group-reset {
+    min-width: 18px;
+    margin-left: 0px !important;
+
+    .icon-row {
+      height: 100%;
+      color: $gray-400;
+    }
+  }
+
+  &:hover,
+  &:active,
+  &.active {
+    border: solid 1px $gray-300;
+    color: $gray-300;
+  }
+}

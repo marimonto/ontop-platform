@@ -1,9 +1,17 @@
 <div class="dashboard-contracts-container">
   <header>
-    <div class="title">
-      Contracts for clients {{ company }}
-    </div>
+    <div class="title">Contracts for clients {{ company }}</div>
   </header>
+  <section class="filters-section">
+    <div class="row mx-0">
+      <div class="col px-0">
+        <app-search-input [data]="searchInput"></app-search-input>
+      </div>
+
+      <div class="filter-button"><app-button [data]="filterButton"></app-button></div>
+      <div class="add-button"><app-button [data]="addButton"></app-button></div>
+    </div>
+  </section>
   <section class="table-section">
     <div class="col-12">
       <app-table [data]="tableData"></app-table>

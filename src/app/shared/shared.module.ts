@@ -3,12 +3,15 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TableComponent } from './components/table/table.component';
+import { SearchInputComponent } from './components/search-input/search-input.component';
+import { FormsModule } from '@angular/forms';
+import { ButtonComponent } from './components/button/button.component';
 
 const layoutComponents = [NavbarComponent];
-const uiComponents = [TableComponent];
+const uiComponents = [TableComponent, SearchInputComponent, ButtonComponent];
 @NgModule({
-  declarations: [...layoutComponents, ...uiComponents],
+  declarations: [...layoutComponents, ...uiComponents ],
   exports: [...layoutComponents, ...uiComponents],
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule, FormsModule],
 })
 export class SharedModule {}

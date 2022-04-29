@@ -1,5 +1,12 @@
-import { IContractor } from "src/app/core/models/contractor";
-import { Iheader } from "src/app/core/models/table";
+import {
+  faSlidersH,
+  faEllipsisV,
+  faPlus,
+} from '@fortawesome/free-solid-svg-icons';
+
+import { IButton } from 'src/app/core/models/button';
+import { ISearchInput } from 'src/app/core/models/form';
+import { Iheader } from 'src/app/core/models/table';
 
 export const COLUMN_TABLE_LIST: Iheader[] = [
   {
@@ -24,29 +31,24 @@ export const COLUMN_TABLE_LIST: Iheader[] = [
   },
 ];
 
-export const CONTRACTOR_LIST: IContractor[] = [
-  {
-    id:'1',
-    contractorName: 'Mariana Montoya',
-    type: 'Traditional',
-    startDate: 'Marzo 4, 2021',
-    amount: 400,
-    status: 1
-  },
-  {
-    id:'1',
-    contractorName: 'Santiago Galeano',
-    type: 'Traditional',
-    startDate: 'Enero 16, 2022',
-    amount: 450,
-    status: 1
-  },
-  {
-    id:'1',
-    contractorName: 'Claudia Patricia Diaz',
-    type: 'Traditional',
-    startDate: 'Abril 1, 2021',
-    amount: 200,
-    status: 2
-  }
-]
+export const SEARCH_INPUT: ISearchInput = {
+  placeholder: 'Search',
+  maxLength: 20,
+};
+export const FILTER_BUTTON: IButton = {
+  backgroundColor: '#ebebeb',
+  color: '#1c0b11',
+  text: 'Filter',
+  icon: faSlidersH,
+  height: '58px',
+  width: '111px',
+};
+export const ADD_BUTTON: IButton = {
+  backgroundColor: '#ff5a70',
+  color: 'white',
+  text: 'New hire',
+  icon: faPlus,
+  height: '58px',
+  width: '192px',
+  fontWeight: 700,
+};

@@ -1,0 +1,11 @@
+<button
+  type="button"
+  class="btn"
+  [style.backgroundColor]="data.backgroundColor"
+  [style.color]="data.color"
+  [style.height]="data.height"
+  [style.width]="data.width"
+  [style.fontWeight]="data.fontWeight"
+>
+  <fa-icon *ngIf="data.icon" [icon]="data.icon"></fa-icon> {{ data.text }}
+</button>

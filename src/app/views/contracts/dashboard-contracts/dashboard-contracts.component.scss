@@ -5,6 +5,20 @@
     text-align: center;
     margin: 62px 15px 20px;
   }
+  .filters-section {
+    width: 80vw;
+    max-width: 1080px;
+    margin-inline: auto;
+    margin-top: 35px;
+    margin-bottom: 40px;
+    .filter-button,
+    .add-button {
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+      padding-right: 0;
+    }
+  }
   .table-section {
     width: 80vw;
     max-width: 1080px;
