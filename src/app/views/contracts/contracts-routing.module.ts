@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ROUTES } from 'src/app/core/Routes/routes';
+import { ROUTES } from 'src/app/core/routes/routes';
 import { DashboardContractsComponent } from './dashboard-contracts/dashboard-contracts.component';
 
 const routes: Routes = [
