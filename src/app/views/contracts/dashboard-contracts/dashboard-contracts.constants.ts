@@ -27,7 +27,7 @@ export const COLUMN_TABLE_LIST: Iheader[] = [
   },
   {
     id: 'status',
-    title: 'Type',
+    title: 'Staus',
   },
 ];
 
