@@ -11,8 +11,11 @@
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
       aria-label="Toggle navigation"
+      #navbarToggler
     >
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon">
+        <fa-icon [icon]="togglerIcon"></fa-icon>
+      </span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -31,15 +34,16 @@
             <fa-icon *ngIf="navItem.icon" [icon]="navItem.icon"></fa-icon>
             {{ navItem.name }}
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" (click)="collapseNav()">
             <li *ngFor="let option of navItem.options">
-              <a class="dropdown-item" [routerLink]="option.path">{{ option.name }} </a>
+              <a class="dropdown-item" [routerLink]="option.path"
+                >{{ option.name }}
+              </a>
             </li>
           </ul>
         </li>
       </ul>
       <div class="avatar-section">
-
         <img *ngIf="avatar" [src]="avatar" alt="Avatar" class="avatar" />
       </div>
     </div>
