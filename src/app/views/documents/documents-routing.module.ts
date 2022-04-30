@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ROUTES } from 'src/app/core/Routes/routes';
-import { DashboardContractsComponent } from './dashboard-contracts/dashboard-contracts.component';
+import { DocumentsComponent } from './documents/documents.component';
 
 const routes: Routes = [
   {
-    path: ROUTES.APP.ROUTES.CONTRACTS.ROUTES.DASHBOARD.PATH,
-    component: DashboardContractsComponent,
-  }
+    path: ROUTES.APP.ROUTES.DOCUMENTS.ROUTES.DASHBOARD.PATH,
+    component: DocumentsComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ContractsRoutingModule {}
+export class DocumentsRoutingModule {}

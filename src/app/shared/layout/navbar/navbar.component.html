@@ -16,7 +16,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li *ngFor="let navItem of navItems" class="nav-item dropdown">
+        <li
+          *ngFor="let navItem of navItems"
+          class="nav-item dropdown"
+          routerLinkActive="active"
+        >
           <a
             class="nav-link dropdown-toggle"
             id="navbarDropdown"
@@ -29,7 +33,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li *ngFor="let option of navItem.options">
-              <a class="dropdown-item">{{ option.name }}</a>
+              <a class="dropdown-item" [routerLink]="option.path">{{ option.name }} </a>
             </li>
           </ul>
         </li>

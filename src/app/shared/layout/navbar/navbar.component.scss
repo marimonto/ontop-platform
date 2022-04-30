@@ -13,9 +13,14 @@
     justify-content: space-evenly;
     max-width: 1000px;
     margin-inline: auto;
-    .nav-link {
-      font-weight: bold;
-      color: $gray-400;
+    .nav-item {
+      .nav-link {
+        font-weight: bold;
+        color: $gray-400;
+      }
+      &.active {
+        border-bottom: 5px solid $primary;
+      }
     }
   }
   .avatar-section {

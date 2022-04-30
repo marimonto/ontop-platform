@@ -11,6 +11,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: ROUTES.APP.ROUTES.DOCUMENTS.PATH,
+    loadChildren: () =>
+      import('./views/documents/documents.module').then(
+        (m) => m.DocumentsModule
+      ),
+  },
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: ROUTES.APP.ROUTES.CONTRACTS.ROUTES.DASHBOARD.FULL_PATH,
