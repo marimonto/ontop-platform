@@ -1,10 +1,14 @@
+import { IItemList } from "./listCard";
+
 export interface ITableData {
   headers: Iheader[];
-  hasActions: boolean;
-  rows: (string | number)[][];
+  actions?: IItemList[];
+  rows: any[];
 }
 
 export interface Iheader {
   id: string;
   title: string;
+  col?: string;
 }
+

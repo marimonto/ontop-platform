@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IUser } from './core/models/user';
 import { AuthService } from './core/services/auth/auth.service';
 
 @Component({
@@ -7,9 +8,12 @@ import { AuthService } from './core/services/auth/auth.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  public user!: IUser;
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.authService.getUser().subscribe();
+    this.authService.getUser().subscribe((res) => {
+      this.user = res;
+    });
   }
 }

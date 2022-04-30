@@ -15,7 +15,6 @@ describe('TableComponent', () => {
       { id: '1', title: 'firstTitle' },
       { id: '2', title: 'secondTitle' },
     ],
-    hasActions: true,
     rows: [
       ['1a', '1b'],
       ['2a', '2b'],
