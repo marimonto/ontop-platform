@@ -1,0 +1,26 @@
+<div class="card card-table-container" *ngIf="data">
+  <div class="card-body px-0">
+    <div
+      class="row mx-0"
+      *ngFor="let row of data.rows[index].data; let i = index"
+    >
+      <div class="col-6 px-0 header-col">
+        {{ data.headers[i].title }}
+      </div>
+      <div class="col-6 px-0" [ngClass]="row.class">
+        <span>
+          {{ row.name }}
+        </span>
+      </div>
+    </div>
+    <div class="row mx-0" *ngIf="data.actions">
+      <div class="col-6 px-0 header-col">Actions</div>
+      <div class="col-6 px-0">
+        <fa-icon [icon]="actionsIcon" (click)="openActions()"></fa-icon>
+      </div>
+      <div *ngIf="data.actions && data.rows[index].showAction" class="list-actions">
+        <app-list-card [items]="data.actions"></app-list-card>
+      </div>
+    </div>
+  </div>
+</div>

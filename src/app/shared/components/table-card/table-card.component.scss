@@ -1,0 +1,45 @@
+@import "src/styles/variables/_colors.scss";
+
+@mixin status-col($color, $backgrounColor) {
+  color: $color;
+  background-color: $backgrounColor;
+  border-radius: 20px;
+  font-weight: 500;
+  padding: 5px 15px;
+  text-align: center;
+}
+
+.card-table-container {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  .row {
+    padding: 9px 20px;
+    font-size: 12px;
+    &:nth-child(odd) {
+      background-color: $background-color;
+    }
+
+    .header-col {
+      font-weight: bold;
+    }
+    .col-success {
+      span {
+        @include status-col(#36cf82, rgba(54, 207, 130, 0.18));
+      }
+    }
+    .col-danger {
+      span {
+        @include status-col(#f29d42, rgba(242, 157, 66, 0.3));
+      }
+    }
+  }
+
+  .list-actions {
+    position: absolute;
+    margin-left: 32%;
+    margin-top: 4%;
+    z-index: 100;
+  }
+}

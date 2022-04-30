@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from './components/button/button.component';
 import { RouterModule } from '@angular/router';
 import { ListCardComponent } from './components/list-card/list-card.component';
+import { TableCardComponent } from './components/table-card/table-card.component';
 
 const layoutComponents = [NavbarComponent];
 const uiComponents = [
@@ -15,6 +16,7 @@ const uiComponents = [
   SearchInputComponent,
   ButtonComponent,
   ListCardComponent,
+  TableCardComponent,
 ];
 @NgModule({
   declarations: [...layoutComponents, ...uiComponents],

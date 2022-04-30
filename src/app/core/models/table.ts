@@ -1,9 +1,12 @@
-import { IItemList } from "./listCard";
+import { IItemList } from './listCard';
 
 export interface ITableData {
   headers: Iheader[];
   actions?: IItemList[];
-  rows: any[];
+  rows: {
+    data: any[];
+    showAction: boolean;
+  }[];
 }
 
 export interface Iheader {
@@ -11,4 +14,3 @@ export interface Iheader {
   title: string;
   col?: string;
 }
-

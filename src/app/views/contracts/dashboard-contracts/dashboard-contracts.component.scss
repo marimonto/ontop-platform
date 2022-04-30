@@ -1,3 +1,5 @@
+@import "src/styles/variables/_breakpoints.scss";
+
 .dashboard-contracts-container {
   .title {
     font-size: 32px;
@@ -25,5 +27,19 @@
     margin-inline: auto;
     margin-top: 35px;
     margin-bottom: 40px;
+    .col-12 {
+      .row-table ,
+      .row-card {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include responsive(lt-md) {
+  .dashboard-contracts-container {
+    .title {
+      font-size: 24px;
+    }
   }
 }
