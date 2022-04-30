@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StatusContractor } from 'src/app/core/enums/contracts';
 import { IButton } from '../../../core/models/button';
 import { IContractor } from '../../../core/models/contractor';
 import { ISearchInput } from '../../../core/models/form';
@@ -6,6 +7,7 @@ import { ITableData } from '../../../core/models/table';
 import { AuthService } from '../../../core/services/auth/auth.service';
 import { ContractsService } from '../../../core/services/contracts/contracts.service';
 import {
+  ACTIONS,
   ADD_BUTTON,
   COLUMN_TABLE_LIST,
   FILTER_BUTTON,
@@ -37,7 +39,7 @@ export class DashboardContractsComponent implements OnInit {
     this.contractsService.getContractors().subscribe((res: IContractor[]) => {
       this.tableData = {
         headers: COLUMN_TABLE_LIST,
-        hasActions: true,
+        actions: ACTIONS,
         rows: this.getRows(res),
       };
     });
@@ -50,13 +52,31 @@ export class DashboardContractsComponent implements OnInit {
 
   getRows(contractorList: IContractor[]): any {
     return contractorList.map((contractor: IContractor) => {
-      return [
-        contractor.contractorName,
-        contractor.type,
-        contractor.startDate,
-        contractor.amount,
-        contractor.status,
-      ];
+      return {
+        showAction: false,
+        data: [
+          {
+            name: contractor.contractorName,
+            img: contractor.photo,
+            col: 'col-3',
+          },
+          {
+            name: contractor.type,
+          },
+          {
+            name: contractor.startDate,
+          },
+          {
+            name: contractor.amount,
+            col: 'col',
+          },
+          {
+            name: StatusContractor[contractor.status],
+            col: 'col-2',
+            class: contractor.status === 'SC-01' ? 'col-success' : 'col-danger',
+          },
+        ],
+      };
     });
   }
 }

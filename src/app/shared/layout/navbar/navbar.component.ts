@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IDropdown } from 'src/app/core/models/dropdown';
 import { DROPDOWNS_ITEMS } from './navbar.constants';
 
@@ -8,6 +8,8 @@ import { DROPDOWNS_ITEMS } from './navbar.constants';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+  @Input() avatar!: string;
+
   public navItems: IDropdown[];
 
   constructor() {

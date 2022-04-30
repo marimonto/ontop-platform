@@ -7,11 +7,17 @@ import { SearchInputComponent } from './components/search-input/search-input.com
 import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from './components/button/button.component';
 import { RouterModule } from '@angular/router';
+import { ListCardComponent } from './components/list-card/list-card.component';
 
 const layoutComponents = [NavbarComponent];
-const uiComponents = [TableComponent, SearchInputComponent, ButtonComponent];
+const uiComponents = [
+  TableComponent,
+  SearchInputComponent,
+  ButtonComponent,
+  ListCardComponent,
+];
 @NgModule({
-  declarations: [...layoutComponents, ...uiComponents ],
+  declarations: [...layoutComponents, ...uiComponents],
   exports: [...layoutComponents, ...uiComponents],
   imports: [CommonModule, FontAwesomeModule, FormsModule, RouterModule],
 })
