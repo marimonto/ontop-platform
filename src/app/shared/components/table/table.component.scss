@@ -41,7 +41,7 @@
     .row-data {
       display: flex;
       flex-direction: row;
-      background-color: #f9f9f9;
+      background-color: $background-color;
       margin-bottom: 24px;
       padding: 5px;
       .col-data {
