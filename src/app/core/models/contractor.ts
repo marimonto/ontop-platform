@@ -4,5 +4,7 @@ export interface IContractor {
   type: string;
   startDate: string;
   amount: number;
-  status: number;
+  status: string;
+  photo: string;
 }
+

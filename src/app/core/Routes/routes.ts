@@ -22,6 +22,18 @@ export const ROUTES = {
           },
         },
       },
+      DOCUMENTS: {
+        PATH: 'documents',
+        FULL_PATH: 'documents',
+        PAGE_NAME: 'documents',
+        ROUTES: {
+          DASHBOARD: {
+            PATH: 'all',
+            FULL_PATH: 'documents/all',
+            PAGE_NAME: 'documents/all',
+          },
+        },
+      },
     },
   },
 

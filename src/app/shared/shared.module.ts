@@ -6,12 +6,21 @@ import { TableComponent } from './components/table/table.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from './components/button/button.component';
+import { RouterModule } from '@angular/router';
+import { ListCardComponent } from './components/list-card/list-card.component';
+import { TableCardComponent } from './components/table-card/table-card.component';
 
 const layoutComponents = [NavbarComponent];
-const uiComponents = [TableComponent, SearchInputComponent, ButtonComponent];
+const uiComponents = [
+  TableComponent,
+  SearchInputComponent,
+  ButtonComponent,
+  ListCardComponent,
+  TableCardComponent,
+];
 @NgModule({
-  declarations: [...layoutComponents, ...uiComponents ],
+  declarations: [...layoutComponents, ...uiComponents],
   exports: [...layoutComponents, ...uiComponents],
-  imports: [CommonModule, FontAwesomeModule, FormsModule],
+  imports: [CommonModule, FontAwesomeModule, FormsModule, RouterModule],
 })
 export class SharedModule {}

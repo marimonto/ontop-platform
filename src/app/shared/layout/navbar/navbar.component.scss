@@ -1,4 +1,5 @@
 @import "src/styles/variables/_colors.scss";
+@import "src/styles/variables/_breakpoints.scss";
 
 .navbar {
   height: 108px;
@@ -13,9 +14,14 @@
     justify-content: space-evenly;
     max-width: 1000px;
     margin-inline: auto;
-    .nav-link {
-      font-weight: bold;
-      color: $gray-400;
+    .nav-item {
+      .nav-link {
+        font-weight: bold;
+        color: $gray-400;
+      }
+      &.active {
+        border-bottom: 5px solid $primary;
+      }
     }
   }
   .avatar-section {
@@ -26,8 +32,64 @@
     .avatar {
       vertical-align: middle;
       width: 65px;
-      height: 65;
+      height: 65px;
       border-radius: 50%;
+    }
+  }
+}
+@include responsive(lt-md) {
+  .navbar,
+  .navbar-light {
+    padding: 0px 8px;
+    height: 61px;
+    .logo {
+      height: 22px;
+    }
+    .navbar-toggler {
+      border: none;
+      padding: 0;
+      &:focus {
+        box-shadow: none;
+      }
+      .navbar-toggler-icon {
+        background-image: none;
+        color: $primary;
+        font-size: 28px;
+        padding-top: 8px;
+      }
+    }
+    .navbar-collapse {
+      position: absolute;
+      top: 61px;
+      left: 0px;
+      background: white;
+      width: 100vw;
+      padding-left: 20px;
+      .navbar-nav {
+        .nav-item {
+          &.active {
+            border-bottom: none;
+          }
+        }
+
+        .dropdown {
+          .dropdown-menu {
+            border: none;
+          }
+        }
+      }
+    }
+
+    .avatar-section {
+      border-top: 1px solid $gray-300;
+      border-left: none;
+      width: 100%;
+      padding: 20px 0;
+      justify-content: left;
+      .avatar {
+        width: 45px;
+        height: 45px;
+      }
     }
   }
 }

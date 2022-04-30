@@ -1,5 +1,15 @@
 @import "src/styles/variables/_colors.scss";
 
+@mixin status-col($color, $backgrounColor) {
+  color: $color;
+  background-color: $backgrounColor;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 15px;
+  text-align: center;
+}
+
 .table-container {
   background: $white;
   mix-blend-mode: normal;
@@ -10,6 +20,7 @@
   .table-header {
     display: flex;
     flex-direction: row;
+    padding: 5px;
     .col-header {
       display: flex;
       flex-direction: column;
@@ -18,6 +29,11 @@
       min-height: 90px;
       font-size: 16px;
       font-weight: bold;
+      padding: 5px 10px;
+    }
+    .col-action {
+      width: 100px;
+      align-items: center;
     }
   }
 
@@ -25,8 +41,9 @@
     .row-data {
       display: flex;
       flex-direction: row;
-      background-color: #f9f9f9;
+      background-color: $background-color;
       margin-bottom: 24px;
+      padding: 5px;
       .col-data {
         display: flex;
         flex-direction: column;
@@ -34,6 +51,43 @@
         align-items: flex-start;
         min-height: 90px;
         font-size: 16px;
+        padding: 5px 10px;
+
+        .item-data {
+          .avatar {
+            vertical-align: middle;
+            width: 41px;
+            height: 41px;
+            border-radius: 50%;
+            margin-right: 15px;
+          }
+        }
+      }
+      .col-success {
+        .item-data {
+          @include status-col(#36cf82, rgba(54, 207, 130, 0.18));
+        }
+      }
+      .col-danger {
+        .item-data {
+          @include status-col(#f29d42, rgba(242, 157, 66, 0.3));
+        }
+      }
+      .col-action {
+        width: 100px;
+        align-items: center;
+        .ng-fa-icon {
+          font-size: 30px;
+          color: $gray-300;
+        }
+      }
+
+      .list-actions {
+        width: 0;
+        height: 0;
+        position: relative;
+        right: 20px;
+        top: 50px;
       }
     }
   }

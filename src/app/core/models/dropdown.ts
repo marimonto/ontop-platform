@@ -4,8 +4,9 @@ export interface IDropdown {
   name: string;
   active?: false;
   icon?: IconProp;
+  path: string;
   options: [{
     name: string;
-    route: string;
+    path: string;
   }];
 }
