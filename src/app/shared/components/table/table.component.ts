@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ITableData } from 'src/app/core/models/table';
-import { COLUMN_TABLE_LIST } from 'src/app/views/contracts/dashboard-contracts/dashboard-contracts.constants';
+import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'app-table',
@@ -10,7 +11,18 @@ import { COLUMN_TABLE_LIST } from 'src/app/views/contracts/dashboard-contracts/d
 export class TableComponent implements OnInit {
   @Input() data!: ITableData;
 
+  public actionsIcon: IconProp = faEllipsisV;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  openActions(index: number) {
+    this.data.rows = this.data.rows.map((row, i: number) => {
+      return {
+        ...row,
+        showAction: index === i,
+      };
+    });
+  }
 }

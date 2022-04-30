@@ -1,16 +1,35 @@
 <div class="table-container" *ngIf="data">
   <div class="table-header">
-    <div class="col-header col" *ngFor="let columnHeader of data.headers">
+    <div
+      *ngFor="let columnHeader of data.headers"
+      class="col-header"
+      [ngClass]="columnHeader.col ? columnHeader.col : 'col'"
+    >
       {{ columnHeader.title }}
     </div>
-    <div class="col-header col" *ngIf="data.hasActions">Actions</div>
+    <div class="col-header col-action" *ngIf="data.actions">Actions</div>
   </div>
   <div class="table-data">
-    <div class="row-data" *ngFor="let rowData of data.rows">
-      <div class="col-data col" *ngFor="let columData of rowData">
-        {{ columData }}
+    <div class="row-data" *ngFor="let rowData of data.rows; let index = index">
+      <div
+        *ngFor="let columData of rowData.data"
+        class="col-data col"
+        [ngClass]="[
+          columData.col ? columData.col : 'col',
+          columData.class ? columData.class : ''
+        ]"
+      >
+        <div class="item-data">
+          <img *ngIf="columData.img" [src]="columData.img" class="avatar" />
+          <span>{{ columData.name }}</span>
+        </div>
       </div>
-      <div class="col-data col" *ngIf="data.hasActions">Actions</div>
+      <div class="col-data col-action" *ngIf="data.actions">
+        <fa-icon [icon]="actionsIcon" (click)="openActions(index)"></fa-icon>
+      </div>
+      <div *ngIf="data.actions && rowData.showAction" class="list-actions">
+        <app-list-card [items]="data.actions"></app-list-card>
+      </div>
     </div>
   </div>
 </div>

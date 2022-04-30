@@ -5,22 +5,25 @@
     "type": "Traditional",
     "startDate": "Marzo 4, 2021",
     "amount": 400,
-    "status": 1
+    "status": "SC-01",
+    "photo": "/assets/images/temp/profile-mariana.png"
   },
   {
     "id": "1",
-    "contractorName": "Santiago Galeano",
+    "contractorName": "Claudia Diaz",
     "type": "Traditional",
     "startDate": "Enero 16, 2022",
     "amount": 450,
-    "status": 1
+    "status": "SC-01",
+    "photo": "/assets/images/temp/profile-claudia.png"
   },
   {
     "id": "1",
-    "contractorName": "Claudia Patricia Diaz",
+    "contractorName": "Melissa Galeano",
     "type": "Traditional",
     "startDate": "Abril 1, 2021",
     "amount": 200,
-    "status": 2
+    "status": "SC-02",
+    "photo": "/assets/images/temp/profile-melissa.png"
   }
 ]

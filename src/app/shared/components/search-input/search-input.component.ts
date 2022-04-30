@@ -1,7 +1,6 @@
 import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ISearchInput } from 'src/app/core/models/form';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
@@ -36,8 +35,6 @@ export class SearchInputComponent {
   set value(value: string) {
     if (value !== undefined && this.val !== value) {
       this.val = value?.trim() || value;
-      console.log(this.val);
-
       this.onChange(this.val);
       this.onTouch(this.val);
     }

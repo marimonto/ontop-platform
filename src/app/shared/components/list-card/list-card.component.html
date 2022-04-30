@@ -1,0 +1,6 @@
+<ul class="list-group-container" *ngIf="items">
+  <li *ngFor="let item of items" class="list-group-item">
+    <fa-icon [icon]="item.icon"></fa-icon>
+    {{ item.name }}
+  </li>
+</ul>
