@@ -1,18 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  StatusContractorList,
+  TypeContractorList,
+} from 'src/app/core/enums/contracts';
+import { IDropdown } from 'src/app/core/models/dropdown';
 
 @Component({
   selector: 'app-contracts-filter',
   templateUrl: './contracts-filter.component.html',
-  styleUrls: ['./contracts-filter.component.scss']
+  styleUrls: ['./contracts-filter.component.scss'],
 })
 export class ContractsFilterComponent implements OnInit {
-
-
-  constructor() { }
-
-  ngOnInit(): void {
+  public contractTypeList: IDropdown[];
+  public contractStatusList: IDropdown[];
+  constructor() {
+    this.contractTypeList = TypeContractorList;
+    this.contractStatusList = StatusContractorList;
   }
 
-
-
+  ngOnInit(): void {}
 }

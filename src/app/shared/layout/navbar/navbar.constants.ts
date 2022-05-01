@@ -1,4 +1,4 @@
-import { IDropdown } from 'src/app/core/models/dropdown';
+import { IDropdownNav } from 'src/app/core/models/dropdown';
 import {
   faUser,
   faFileLines,
@@ -7,7 +7,7 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 import { ROUTES } from '../../../core/Routes/routes';
 
-export const DROPDOWNS_ITEMS: IDropdown[] = [
+export const DROPDOWNS_ITEMS: IDropdownNav[] = [
   {
     name: 'Contracts',
     active: false,

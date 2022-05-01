@@ -1,27 +1,22 @@
-<div class="row d-flex my-5">
+<div class="row d-flex mt-2">
 
-  <div class="col">
+  <div class="col-12 col-lg my-2">
     <select class="form-select" aria-label="Default select example">
-      <option selected>Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
+      <option value="" selected disabled>Contract type</option>
+      <option *ngFor="let option of contractTypeList" [value]="option.value">{{option.name}}</option>
     </select>
   </div>
-  <div class="col">
+  <div class="col-12 col-lg my-2">
     <input
-      type="email"
+      type="text"
       class="form-control"
-      id="exampleFormControlInput1"
-      placeholder="name@example.com"
+      placeholder="Contractor Name"
     />
   </div>
-  <div class="col">
+  <div class="col-12 col-lg my-2">
     <select class="form-select" aria-label="Default select example">
-      <option selected>Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
+      <option value="" selected disabled>Status</option>
+      <option *ngFor="let option of contractStatusList" [value]="option.value">{{option.name}}</option>
     </select>
   </div>
 </div>
