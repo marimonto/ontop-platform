@@ -4,7 +4,9 @@
     class="list-group-item"
     (click)="onClick(item.action)"
   >
-    <fa-icon [icon]="item.icon" *ngIf="item.icon"></fa-icon>
-    {{ item.name }}
+    <div class="icon-item" [ngClass]="item.class ? item.class : ''">
+      <fa-icon [icon]="item.icon" *ngIf="item.icon"></fa-icon>
+    </div>
+    <span> {{ item.name }}</span>
   </li>
 </ul>

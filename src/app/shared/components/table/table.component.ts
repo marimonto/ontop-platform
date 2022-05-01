@@ -18,12 +18,16 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {}
 
   openActions(index: number) {
-
     this.data.rows = this.data.rows.map((row, i: number) => {
       return {
         ...row,
         showAction: index === i,
       };
     });
+  }
+
+  onClickAction(event: string) {
+    console.log('se llama evento: ' + event);
+    this.openActions(-1);
   }
 }

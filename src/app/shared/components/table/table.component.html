@@ -28,7 +28,7 @@
         <fa-icon [icon]="actionsIcon" (click)="openActions(index)"></fa-icon>
       </div>
       <div *ngIf="data.actions && rowData.showAction" class="list-actions">
-        <app-list-card [items]="data.actions"></app-list-card>
+        <app-list-card [items]="data.actions" (clickItemEvent)="onClickAction($event)"></app-list-card>
       </div>
     </div>
   </div>

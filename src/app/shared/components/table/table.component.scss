@@ -86,9 +86,15 @@
         width: 0;
         height: 0;
         position: relative;
-        right: 20px;
-        top: 50px;
+        right: 45px;
+        top: 40px;
       }
+
+     /*  &:last-child {
+        .list-actions {
+          top: -100px;
+        }
+      } */
     }
   }
 }

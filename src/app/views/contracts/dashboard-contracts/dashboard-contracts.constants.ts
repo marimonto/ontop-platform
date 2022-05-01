@@ -58,6 +58,7 @@ export const ACTIONS: IItemList[] = [
     name: 'Delete',
     action: 'delete',
     icon: faTrashCan,
+    class: 'icon-primary'
   },
 ];
 export const SEARCH_INPUT: ISearchInput = {

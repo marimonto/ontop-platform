@@ -1,5 +1,27 @@
+@import "src/styles/variables/_colors.scss";
+@import "src/styles/variables/_colors.scss";
+
 .list-group-container {
   width: max-content;
   padding-inline-start: 0px;
+  .list-group-item {
+    display: flex;
+    flex-direction: row;
+    .icon-item {
+      min-width: 25px;
+      color: $gray-400;
+    }
+    span {
+      color: $gray-500;
+      margin-left: 5px;
+    }
+  }
+}
 
+.list-group-container {
+  .list-group-item {
+    .icon-primary {
+      color: $primary;
+    }
+  }
 }

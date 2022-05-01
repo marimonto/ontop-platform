@@ -7,6 +7,7 @@
   font-weight: 500;
   padding: 5px 15px;
   text-align: center;
+  white-space: nowrap;
 }
 
 .card-table-container {
@@ -14,6 +15,7 @@
   border-radius: 5px;
   margin-bottom: 15px;
   padding: 10px 15px;
+
   .row {
     padding: 9px 20px;
     font-size: 14px;

@@ -50,6 +50,7 @@
       font-size: 24px;
     }
     .filters-section {
+      width: 90vw;
       .filter-button,
       .add-button {
         margin-top: 15px;
@@ -66,6 +67,9 @@
       .add-button {
         width: 65%;
       }
+    }
+    .table-section {
+      width: 90vw;
     }
   }
 }

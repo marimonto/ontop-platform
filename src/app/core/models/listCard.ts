@@ -4,4 +4,5 @@ export interface IItemList {
   name: string;
   action: string;
   icon?: IconProp;
+  class?: string;
 }
