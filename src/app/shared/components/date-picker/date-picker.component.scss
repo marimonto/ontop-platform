@@ -1,0 +1,40 @@
+@import "src/styles/variables/_colors.scss";
+
+.input-group-icon{
+  position: absolute;
+  z-index: 100;
+  color: $gray-400;
+  padding-left: 15px;
+  .calendar-icon{
+    font-size: 20px;
+    margin-right: 10px;
+    padding-top: 2px;
+  }
+  span{
+    padding-top: 5px;
+    font-size: 14px;
+  }
+}
+
+.calendar-input {
+  border-radius: 6px;
+  border: solid 1px #c7cfd8;
+  background-color: $white;
+  padding-right: 10px;
+  height: 40px;
+
+  input {
+    border: 0px;
+    padding-left: 110px;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  &:hover,
+  &:active,
+  &.active {
+    border: solid 1px $gray-300;
+    color: $gray-300;
+  }
+}

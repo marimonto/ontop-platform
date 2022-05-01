@@ -36,7 +36,7 @@ describe('ButtonComponent', () => {
       imports: [FontAwesomeModule],
       componentProperties: {
         data,
-        clicButtonEvent: {
+        clickButtonEvent: {
           emit: buttonClickSpy,
         } as any,
       },

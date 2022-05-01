@@ -9,11 +9,11 @@
       </div>
 
       <div class="filter-button">
-        <app-button [data]="filterButton"></app-button>
+        <app-button [data]="filterButton" (clickButtonEvent)="onClickFilter()"></app-button>
       </div>
       <div class="add-button"><app-button [data]="addButton"></app-button></div>
     </div>
-    <div>
+    <div class="additional-filters mt-4" *ngIf="isShowFilter">
       <app-contracts-filter></app-contracts-filter>
     </div>
   </section>
