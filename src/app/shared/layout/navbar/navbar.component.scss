@@ -40,7 +40,7 @@
 @include responsive(lt-md) {
   .navbar,
   .navbar-light {
-    padding: 0px 8px;
+    padding: 0px 8px 0 20px;
     height: 61px;
     .logo {
       height: 22px;

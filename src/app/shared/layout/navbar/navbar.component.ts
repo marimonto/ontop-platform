@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { IDropdown } from 'src/app/core/models/dropdown';
+import { IDropdownNav } from 'src/app/core/models/dropdown';
 import { DROPDOWNS_ITEMS } from './navbar.constants';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
@@ -9,11 +9,11 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  @ViewChild('navbarToggler') navbarToggler!:ElementRef;
+  @ViewChild('navbarToggler') navbarToggler!: ElementRef;
 
   @Input() avatar!: string;
 
-  public navItems: IDropdown[];
+  public navItems: IDropdownNav[];
   public togglerIcon: IconProp = faBars;
   constructor() {
     this.navItems = JSON.parse(JSON.stringify(DROPDOWNS_ITEMS));

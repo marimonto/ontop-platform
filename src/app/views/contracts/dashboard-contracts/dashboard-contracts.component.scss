@@ -20,6 +20,14 @@
       width: fit-content;
       padding-right: 0;
     }
+
+    .filter-button {
+      width: 111px;
+      margin-left: 10px;
+    }
+    .add-button {
+      width: 192px;
+    }
   }
   .table-section {
     width: 80vw;
@@ -28,7 +36,7 @@
     margin-top: 35px;
     margin-bottom: 40px;
     .col-12 {
-      .row-table ,
+      .row-table,
       .row-card {
         width: 100%;
       }
@@ -40,6 +48,24 @@
   .dashboard-contracts-container {
     .title {
       font-size: 24px;
+    }
+    .filters-section {
+      .filter-button,
+      .add-button {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        padding-right: 0;
+      }
+      .filter-button {
+        width: 35%;
+        padding-left: 0;
+        margin-left: 0;
+      }
+      .add-button {
+        width: 65%;
+      }
     }
   }
 }
