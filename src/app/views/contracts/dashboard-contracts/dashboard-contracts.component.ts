@@ -25,10 +25,14 @@ export class DashboardContractsComponent implements OnInit {
   public searchInput: ISearchInput = SEARCH_INPUT;
   public filterButton: IButton = FILTER_BUTTON;
   public addButton: IButton = ADD_BUTTON;
+  public isShowFilter: boolean;
+
   constructor(
     private contractsService: ContractsService,
     private authService: AuthService
-  ) {}
+  ) {
+    this.isShowFilter = false;
+  }
 
   ngOnInit(): void {
     this.getContractInfo();
@@ -48,6 +52,10 @@ export class DashboardContractsComponent implements OnInit {
     this.authService.getUser().subscribe((res) => {
       this.company = res.companyName;
     });
+  }
+
+  onClickFilter(): void {
+    this.isShowFilter = !this.isShowFilter;
   }
 
   getRows(contractorList: IContractor[]): any {

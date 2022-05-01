@@ -1,9 +1,9 @@
 <div class="row d-flex mt-2 contracts-filter-container">
-  <div class="col-12 col-lg my-2">
+  <div class="col-12 col-lg-6 col-xl my-2">
     <app-date-picker></app-date-picker>
   </div>
 
-  <div class="col-12 col-lg my-2">
+  <div class="col-12 col-lg-6 col-xl  my-2">
     <select class="form-select" aria-label="Default select example">
       <option value="" selected disabled>Contract type</option>
       <option *ngFor="let option of contractTypeList" [value]="option.value">
@@ -11,15 +11,19 @@
       </option>
     </select>
   </div>
-  <div class="col-12 col-lg my-2">
+  <div class="col-12 col-lg-6 col-xl  my-2">
     <input type="text" class="form-control" placeholder="Contractor Name" />
   </div>
-  <div class="col-12 col-lg my-2">
+  <div class="col-12 col-lg-6 col-xl  my-2">
     <select class="form-select" aria-label="Default select example">
       <option value="" selected disabled>Status</option>
       <option *ngFor="let option of contractStatusList" [value]="option.value">
         {{ option.name }}
       </option>
     </select>
+  </div>
+
+  <div class="d-flex d-md-none clear-filters">
+    <span>Clear filters</span>
   </div>
 </div>

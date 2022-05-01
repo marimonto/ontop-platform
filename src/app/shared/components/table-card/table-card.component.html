@@ -1,5 +1,5 @@
 <div class="card card-table-container" *ngIf="data">
-  <div class="card-body px-0">
+  <div class="card-body px-0 pb-0">
     <div
       class="row mx-0"
       *ngFor="let row of data.rows[index].data; let i = index"
@@ -15,7 +15,7 @@
     </div>
     <div class="row mx-0" *ngIf="data.actions">
       <div class="col-6 px-0 header-col">Actions</div>
-      <div class="col-6 px-0">
+      <div class="col-6 px-0 action-button">
         <fa-icon [icon]="actionsIcon" (click)="openActions()"></fa-icon>
       </div>
       <div *ngIf="data.actions && data.rows[index].showAction" class="list-actions">

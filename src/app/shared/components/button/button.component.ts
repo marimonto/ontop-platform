@@ -8,13 +8,13 @@ import { IButton } from 'src/app/core/models/button';
 })
 export class ButtonComponent implements OnInit {
   @Input() data!: IButton;
-  @Output() clicButtonEvent = new EventEmitter<void>();
+  @Output() clickButtonEvent = new EventEmitter<void>();
 
   constructor() {}
 
   ngOnInit(): void {}
 
   onClick(): void {
-    this.clicButtonEvent.emit();
+    this.clickButtonEvent.emit();
   }
 }
