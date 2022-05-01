@@ -17,7 +17,7 @@ describe('ContractsService', () => {
     service = TestBed.inject(ContractsService);
     httpTestingController = TestBed.inject(HttpTestingController);
   });
-  fit('should get all contracts', (done) => {
+  it('should get all contracts', (done) => {
     const contracts = [
       {
         id: '1',

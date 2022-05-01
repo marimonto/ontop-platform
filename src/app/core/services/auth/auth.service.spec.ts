@@ -17,7 +17,7 @@ describe('AuthService', () => {
     service = TestBed.inject(AuthService);
     httpTestingController = TestBed.inject(HttpTestingController);
   });
-  fit('should get user', (done) => {
+  it('should get user', (done) => {
     const user = {
       name: 'Mariana',
       companyName: 'FBS',
