@@ -1,0 +1,17 @@
+<div class="input-group-icon">
+  <div class="icon-row d-flex align-items-center mr-2 ml-3 h-100">
+    <fa-icon [icon]="calendarIcon" class="calendar-icon"></fa-icon>
+    <span>Create on:</span>
+  </div>
+</div>
+<div class="input-group calendar-input">
+  <input
+    class="form-control"
+    [style.width]="'350px'"
+    [(ngModel)]="dateRange"
+    [selectMode]="'range'"
+    [owlDateTimeTrigger]="dtRange"
+    [owlDateTime]="dtRange"
+  />
+  <owl-date-time [pickerType]="'calendar'" #dtRange></owl-date-time>
+</div>
