@@ -23,7 +23,7 @@
         <app-table [data]="tableData"></app-table>
       </div>
     </div>
-    <div class="col-12 d-flex d-md-none" *ngFor="let card of tableData.rows; let i=index">
+    <div class="col-12 d-flex d-md-none" *ngFor="let card of tableData?.rows; let i=index">
       <div class="row-card">
         <app-table-card [data]="tableData" [index]="i"></app-table-card>
       </div>

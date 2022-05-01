@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StatusContractor } from 'src/app/core/enums/contracts';
+import { StatusContractor } from '../../../core/enums/contracts';
 import { IButton } from '../../../core/models/button';
 import { IContractor } from '../../../core/models/contractor';
 import { ISearchInput } from '../../../core/models/form';
