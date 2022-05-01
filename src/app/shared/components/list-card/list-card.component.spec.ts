@@ -1,25 +1,46 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { render, screen, fireEvent } from '@testing-library/angular';
+import '@testing-library/jest-dom';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { IItemList } from 'src/app/core/models/listCard';
 import { ListCardComponent } from './list-card.component';
 
 describe('ListCardComponent', () => {
-  let component: ListCardComponent;
-  let fixture: ComponentFixture<ListCardComponent>;
+  const items: IItemList[] = [
+    { name: 'name1', action: 'action1' },
+    { name: 'name2', action: 'action2' },
+  ];
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ListCardComponent ]
-    })
-    .compileComponents();
+  const clickItemEventSpy = jest.fn();
+
+  test('should render ListCardComponent', async () => {
+     await render(ListCardComponent, {
+      imports: [FontAwesomeModule],
+      componentProperties: { items: items },
+    });
+
+    const firstItem = screen.getByText('name1');
+    const secondItem = screen.getByText('name2');
+
+    expect(firstItem).toBeInTheDocument();
+    expect(secondItem).toBeInTheDocument();
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ListCardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  test('should emit event when click button', async () => {
+    await render(ListCardComponent, {
+      imports: [FontAwesomeModule],
+      componentProperties: {
+        items,
+        clickItemEvent: {
+          emit: clickItemEventSpy,
+        } as any,
+      },
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    const firstItem = screen.getByText('name1');
+
+    fireEvent.click(firstItem);
+
+    expect(clickItemEventSpy).toHaveBeenCalledTimes(1);
+    expect(clickItemEventSpy).toHaveBeenCalledWith('action1');
   });
 });

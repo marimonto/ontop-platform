@@ -1,6 +1,10 @@
 <ul class="list-group-container" *ngIf="items">
-  <li *ngFor="let item of items" class="list-group-item">
-    <fa-icon [icon]="item.icon"></fa-icon>
+  <li
+    *ngFor="let item of items"
+    class="list-group-item"
+    (click)="onClick(item.action)"
+  >
+    <fa-icon [icon]="item.icon" *ngIf="item.icon"></fa-icon>
     {{ item.name }}
   </li>
 </ul>

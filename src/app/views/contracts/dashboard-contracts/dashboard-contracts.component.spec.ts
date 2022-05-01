@@ -6,6 +6,7 @@ import { AuthService } from '../../../core/services/auth/auth.service';
 import { ContractsService } from '../../../core/services/contracts/contracts.service';
 import { SharedModule } from '../../../shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ContractsFilterComponent } from './components/contracts-filter/contracts-filter.component';
 
 describe('DashboardContractsComponent', () => {
   let component: RenderResult<
@@ -18,8 +19,9 @@ describe('DashboardContractsComponent', () => {
     getContractors: jest.fn().mockReturnValue(of({})),
   };
 
-  test('should call getUser', async () => {
+  fit('should call getUser', async () => {
     component = await render(DashboardContractsComponent, {
+      declarations: [DashboardContractsComponent, ContractsFilterComponent],
       imports: [SharedModule, FontAwesomeModule],
       providers: [
         {
@@ -32,7 +34,5 @@ describe('DashboardContractsComponent', () => {
         },
       ],
     });
-    /*   const getUserSpy = jest.spyOn(authServiceMock, 'getUser');
-    expect(getUserSpy).toHaveBeenCalled(); */
   });
 });

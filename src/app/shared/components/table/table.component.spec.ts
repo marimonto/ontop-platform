@@ -1,28 +1,58 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TableComponent } from './table.component';
-import { render, RenderResult } from '@testing-library/angular';
+import { fireEvent, render, RenderResult } from '@testing-library/angular';
 import '@testing-library/jest-dom';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { ITableData } from 'src/app/core/models/table';
 import { By } from '@angular/platform-browser';
+import { ListCardComponent } from '../list-card/list-card.component';
 
 describe('TableComponent', () => {
   let tableComponent: RenderResult<TableComponent, TableComponent>;
+
   const data: ITableData = {
     headers: [
       { id: '1', title: 'firstTitle' },
       { id: '2', title: 'secondTitle' },
     ],
+    actions: [{ name: 'name', action: 'action' }],
     rows: [
-      ['1a', '1b'],
-      ['2a', '2b'],
+      {
+        showAction: false,
+        data: [
+          {
+            name: '1a',
+            img: 'img',
+            col: 'col-3',
+          },
+          {
+            name: '1b',
+            img: 'img',
+            col: 'col-3',
+          },
+        ],
+      },
+      {
+        showAction: false,
+        data: [
+          {
+            name: '2a',
+            img: 'img',
+            col: 'col-3',
+          },
+          {
+            name: '2b',
+            img: 'img',
+            col: 'col-3',
+          },
+        ],
+      },
     ],
   };
 
-  fit('should render table', async () => {
+  it('should render table', async () => {
     tableComponent = await render(TableComponent, {
+      declarations: [ListCardComponent],
       imports: [FontAwesomeModule, FormsModule],
       componentProperties: { data },
     });
@@ -37,4 +67,6 @@ describe('TableComponent', () => {
     expect(columns.length).toEqual(3);
     expect(rowsData.length).toEqual(data.rows.length);
   });
+
+
 });

@@ -18,6 +18,7 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {}
 
   openActions(index: number) {
+
     this.data.rows = this.data.rows.map((row, i: number) => {
       return {
         ...row,

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {
   StatusContractorList,
   TypeContractorList,
-} from 'src/app/core/enums/contracts';
-import { IDropdown } from 'src/app/core/models/dropdown';
+} from '../../../../../core/enums/contracts';
+import { IDropdown } from '../../../../../core/models/dropdown';
 
 @Component({
   selector: 'app-contracts-filter',
